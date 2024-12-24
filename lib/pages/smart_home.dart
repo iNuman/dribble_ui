@@ -35,23 +35,6 @@ class _SmartHomeState extends State<SmartHome> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: [
-          //     Image.asset(
-          //       'lib/icons/menu.png',
-          //       height: 45,
-          //       color: Colors.grey[800],
-          //     ),
-          //
-          //     // account Icon
-          //     Icon(
-          //       Icons.person,
-          //       size: 45,
-          //       color: Colors.grey.shade800,
-          //     )
-          //   ],
-          // ),
 
           const SizedBox(height: 42),
 
