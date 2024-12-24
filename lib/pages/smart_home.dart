@@ -14,6 +14,7 @@ class _SmartHomeState extends State<SmartHome> {
       child: Container(
         color: Colors.blueAccent,
         child: const Center(child: Text("Smart Home")),
+
       ),
     );
   }
