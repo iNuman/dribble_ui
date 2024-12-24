@@ -1,4 +1,5 @@
 import 'package:dribble_ui/widgets/emoticon_widget.dart';
+import 'package:dribble_ui/widgets/exercise_row_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.blue.shade800,
         bottomNavigationBar: BottomNavigationBar(items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ]),
         body: SafeArea(
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     // How do you feel
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("How do you feel? ",
@@ -180,15 +181,42 @@ class _HomePageState extends State<HomePage> {
 
               Expanded(
                 child: Container(
-                  color: Colors.grey.shade100,
-                  child: const Center(
-                    child: Column(
-                      children: [
-                        Text("Hello")
-                      ],
-                    ),
-                  )
-                ),
+                    padding: const EdgeInsets.all(25),
+                    color: Colors.grey.shade200,
+                    child: Center(
+                      child: Column(
+                        children: [
+                          // Exercise heading
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Exercise ",
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                              Icon(
+                                Icons.more_horiz,
+                                color: Colors.black,
+                              )
+                            ],
+                          ),
+
+                          const SizedBox(
+                            height: 20,
+                          ),
+
+                          // List of exercises
+                          Expanded(child: ListView(
+                            children: [
+                              ExerciseRowWidget(icon: Icons.favorite, exerciseName: "Speaking Skills", noOfExercises: 15, color: Colors.orange,),
+                              ExerciseRowWidget(icon: Icons.person, exerciseName: "Reading Skills", noOfExercises: 12, color: Colors.blueAccent),
+                              ExerciseRowWidget(icon: Icons.star, exerciseName: "Writing Skills", noOfExercises: 10, color: Colors.purple),
+                            ],
+                          )),
+
+                        ],
+                      ),
+                    )),
               ),
             ],
           ), // This trailing comma makes auto-formatting nicer for build methods.
