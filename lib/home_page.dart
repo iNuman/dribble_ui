@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const SizedBox(height: 12,),
                             const Text("Hi Good Morning, ",
                                 style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
                             const SizedBox(height: 6),
