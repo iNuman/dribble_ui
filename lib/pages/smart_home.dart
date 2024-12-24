@@ -87,22 +87,21 @@ class _SmartHomeState extends State<SmartHome> {
 
           Expanded(
               child: GridView.builder(
-                  itemCount: 4,
-                  physics: const NeverScrollableScrollPhysics(),
-                  padding: const EdgeInsets.symmetric(horizontal: 18),
-                  gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1 / 1.3),
-                itemBuilder: (context, index) {
-                  return SmartDeviceCardWidget(
-                    smartDeviceName: mySmartDevices[index][0],
-                    iconPath: mySmartDevices[index][1],
-                    powerOn: mySmartDevices[index][2],
-                    onChanged: (value) => powerSwitchChanged(value, index),
-                  );
-                },)),
+            itemCount: 4,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1 / 1.3),
+            itemBuilder: (context, index) {
+              return SmartDeviceCardWidget(
+                smartDeviceName: mySmartDevices[index][0],
+                iconPath: mySmartDevices[index][1],
+                powerOn: mySmartDevices[index][2],
+                onChanged: (value) => powerSwitchChanged(value, index),
+              );
+            },
+          )),
         ],
       ),
     );
   }
-
 }
