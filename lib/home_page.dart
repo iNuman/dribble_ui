@@ -1,3 +1,4 @@
+import 'package:dribble_ui/bottom_nav.dart';
 import 'package:dribble_ui/widgets/emoticon_widget.dart';
 import 'package:dribble_ui/widgets/exercise_row_widget.dart';
 import 'package:flutter/material.dart';
@@ -14,11 +15,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.blue.shade800,
-        bottomNavigationBar: BottomNavigationBar(items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-        ]),
         body: SafeArea(
           child: Column(
             children: <Widget>[
