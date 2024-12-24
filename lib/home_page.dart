@@ -9,22 +9,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade800,
-      appBar: AppBar(
         backgroundColor: Colors.blue.shade800,
-        title: Text(""),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-          ],
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: const SafeArea(
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: [
+                  Text("Hi Good Morning, ",
+                      style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+                ],
+              )
+            ],
+          ), // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 }
