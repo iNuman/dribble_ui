@@ -182,7 +182,13 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                     padding: const EdgeInsets.all(25),
-                    color: Colors.grey.shade200,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                    ),
                     child: Center(
                       child: Column(
                         children: [
