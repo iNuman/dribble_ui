@@ -211,6 +211,7 @@ class _HomePageState extends State<HomePage> {
                               ExerciseRowWidget(icon: Icons.favorite, exerciseName: "Speaking Skills", noOfExercises: 15, color: Colors.orange,),
                               ExerciseRowWidget(icon: Icons.person, exerciseName: "Reading Skills", noOfExercises: 12, color: Colors.blueAccent),
                               ExerciseRowWidget(icon: Icons.star, exerciseName: "Writing Skills", noOfExercises: 10, color: Colors.purple),
+                              ExerciseRowWidget(icon: Icons.add_a_photo, exerciseName: "Writing Skills", noOfExercises: 10, color: Colors.purple),
                             ],
                           )),
 
