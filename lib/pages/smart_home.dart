@@ -35,25 +35,25 @@ class _SmartHomeState extends State<SmartHome> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset(
-                'lib/icons/menu.png',
-                height: 45,
-                color: Colors.grey[800],
-              ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     Image.asset(
+          //       'lib/icons/menu.png',
+          //       height: 45,
+          //       color: Colors.grey[800],
+          //     ),
+          //
+          //     // account Icon
+          //     Icon(
+          //       Icons.person,
+          //       size: 45,
+          //       color: Colors.grey.shade800,
+          //     )
+          //   ],
+          // ),
 
-              // account Icon
-              Icon(
-                Icons.person,
-                size: 45,
-                color: Colors.grey.shade800,
-              )
-            ],
-          ),
-
-          const SizedBox(height: 20),
+          const SizedBox(height: 42),
 
           // welcome home
           Padding(
@@ -67,7 +67,7 @@ class _SmartHomeState extends State<SmartHome> {
                 ),
                 const Text(
                   'Noman Ali',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                 ),
               ],
             ),
@@ -90,7 +90,7 @@ class _SmartHomeState extends State<SmartHome> {
             itemCount: 4,
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.symmetric(horizontal: 18),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1 / 1.3),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.2 / 1.4),
             itemBuilder: (context, index) {
               return SmartDeviceCardWidget(
                 smartDeviceName: mySmartDevices[index][0],
