@@ -1,4 +1,5 @@
 import 'package:dribble_ui/home_page.dart';
+import 'package:dribble_ui/pages/user_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/smart_home.dart';
@@ -68,10 +69,7 @@ class _BottomNavAppState extends State<BottomNavApp> {
         );
       case "Profile":
         return MaterialPageRoute(
-          builder: (context) => Container(
-            color: Colors.blueAccent,
-            child: const Center(child: Text("Profile")),
-          ),
+          builder: (context) => const UserProfile(),
         );
       default:
         return MaterialPageRoute(
