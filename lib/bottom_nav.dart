@@ -24,6 +24,7 @@ class _BottomNavAppState extends State<BottomNavApp> {
         onGenerateRoute: _generateRoute,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey.shade200,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Smart Home'),
@@ -59,7 +60,6 @@ class _BottomNavAppState extends State<BottomNavApp> {
     });
   }
 
-  // Define route generation
   Route<dynamic> _generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case "SmartHome":
