@@ -241,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     );
                   },
-                  child: const Text("Open Smart Devices"),
+                  child: const Text("Show Progress"),
                 ),
               ),
 
