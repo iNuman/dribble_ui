@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import '../models/user.dart';
 
 class MockData {
@@ -9,5 +11,6 @@ class MockData {
     about:
     'Skilled Android and Application Developer with years of experience designing and building user-friendly, high-performance mobile apps tailored to meet individual client needs and deliver seamless digital solutions.',    isDarkMode: false,
   );
+
 }
 
