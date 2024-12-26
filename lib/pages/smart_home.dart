@@ -1,6 +1,5 @@
 import 'package:dribble_ui/widgets/smart_device_card_widget.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 class SmartHome extends StatefulWidget {
   const SmartHome({super.key});
@@ -35,10 +34,8 @@ class _SmartHomeState extends State<SmartHome> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           const SizedBox(height: 42),
-
-          // welcome home
+          // Welcome home
           Padding(
             padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
             child: Column(
