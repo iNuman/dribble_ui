@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                         height: MediaQuery.of(context).size.height * 0.5,
                         child: Expanded(
                           child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
+                              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                               decoration: BoxDecoration(
                                 color: Colors.grey.shade200,
                                 borderRadius: const BorderRadius.only(
