@@ -176,51 +176,76 @@ class _HomePageState extends State<HomePage> {
                 height: 25,
               ),
 
-              Expanded(
-                child: Container(
-                    padding: const EdgeInsets.all(25),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                    ),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          // Exercise heading
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Exercise ",
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (context) => SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.5, // Adjust height
+                        child: Expanded(
+                          child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade200,
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(20),
+                                  topRight: Radius.circular(20),
+                                ),
                               ),
-                              Icon(
-                                Icons.more_horiz,
-                                color: Colors.black,
-                              )
-                            ],
-                          ),
+                              child: Center(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Theme.of(context).hintColor,
+                                        borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                      ),
+                                      height: 4,
+                                      width: 40,
+                                      margin: const EdgeInsets.symmetric(vertical: 10),
+                                    ),
+                                    // Exercise heading
+                                    const Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "Exercise ",
+                                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                                        ),
+                                        Icon(
+                                          Icons.more_horiz,
+                                          color: Colors.black,
+                                        )
+                                      ],
+                                    ),
 
-                          const SizedBox(
-                            height: 20,
-                          ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
 
-                          // List of exercises
-                          Expanded(child: ListView(
-                            children: [
-                              ExerciseRowWidget(icon: Icons.favorite, exerciseName: "Speaking Skills", noOfExercises: 15, color: Colors.orange,),
-                              ExerciseRowWidget(icon: Icons.person, exerciseName: "Reading Skills", noOfExercises: 12, color: Colors.blueAccent),
-                              ExerciseRowWidget(icon: Icons.star, exerciseName: "Writing Skills", noOfExercises: 10, color: Colors.purple),
-                            ],
-                          )),
+                                    // List of exercises
+                                    Expanded(child: ListView(
+                                      children: [
+                                        ExerciseRowWidget(icon: Icons.favorite, exerciseName: "Speaking Skills", noOfExercises: 15, color: Colors.orange,),
+                                        ExerciseRowWidget(icon: Icons.person, exerciseName: "Reading Skills", noOfExercises: 12, color: Colors.blueAccent),
+                                        ExerciseRowWidget(icon: Icons.star, exerciseName: "Writing Skills", noOfExercises: 10, color: Colors.purple),
+                                      ],
+                                    )),
 
-                        ],
+                                  ],
+                                ),
+                              )),
+                        ), // Reusable GridView builder
                       ),
-                    )),
+                    );
+                  },
+                  child: const Text("Open Smart Devices"),
+                ),
               ),
+
+
             ],
           ), // This trailing comma makes auto-formatting nicer for build methods.
         ));
