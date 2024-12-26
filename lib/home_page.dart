@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                       context: context,
                       isScrollControlled: true,
                       builder: (context) => SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.5, // Adjust height
+                        height: MediaQuery.of(context).size.height * 0.5,
                         child: Expanded(
                           child: Container(
                               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
