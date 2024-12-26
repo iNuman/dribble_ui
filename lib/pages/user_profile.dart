@@ -34,7 +34,7 @@ class UserProfile extends StatelessWidget {
                   // setState(() {});
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               buildName(MockData.userData),
 
               const SizedBox(height: 24),
@@ -44,7 +44,7 @@ class UserProfile extends StatelessWidget {
               NumbersWidget(),
 
               const SizedBox(height: 48),
-              // buildAbout(user),
+              buildAbout(user),
             ],
           ),
         ),
