@@ -33,7 +33,13 @@ class UserProfile extends StatelessWidget {
                 },
               ),
               SizedBox(height: 24),
-              buildName(MockData.userData)],
+              buildName(MockData.userData),
+
+              const SizedBox(height: 24),
+              Center(child: buildUpgradeButton()),
+
+
+            ],
           ),
         ),
       ),
