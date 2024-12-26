@@ -49,6 +49,7 @@ class UserProfile extends StatelessWidget {
     );
   }
 
+
   Widget buildName(User user) => Column(
         children: [
           Text(
