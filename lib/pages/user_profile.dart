@@ -44,7 +44,7 @@ class UserProfile extends StatelessWidget {
               NumbersWidget(),
 
               const SizedBox(height: 48),
-              buildAbout(user),
+              // buildAbout(user),
             ],
           ),
         ),
