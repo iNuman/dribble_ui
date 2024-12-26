@@ -190,8 +190,8 @@ class _HomePageState extends State<HomePage> {
                               decoration: BoxDecoration(
                                 color: Colors.grey.shade200,
                                 borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
+                                  topLeft: Radius.circular(24),
+                                  topRight: Radius.circular(24),
                                 ),
                               ),
                               child: Center(
