@@ -35,7 +35,7 @@ class _SmartHomeState extends State<SmartHome> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 42),
-          // Welcome home
+          // welcome home
           Padding(
             padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
             child: Column(
