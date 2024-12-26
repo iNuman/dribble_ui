@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../models/user.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/budget_widget.dart';
+import '../widgets/numbers_widget.dart';
 import 'edit_profile.dart';
 
 class UserProfile extends StatelessWidget {
@@ -19,6 +20,7 @@ class UserProfile extends StatelessWidget {
     return Container(
       child: Builder(
         builder: (context) => Scaffold(
+          backgroundColor: Colors.grey.shade200,
           appBar: buildAppBar(context),
           body: ListView(
             physics: BouncingScrollPhysics(),
@@ -38,7 +40,8 @@ class UserProfile extends StatelessWidget {
               const SizedBox(height: 24),
               Center(child: buildUpgradeButton()),
 
-
+              const SizedBox(height: 24),
+              NumbersWidget(),
             ],
           ),
         ),
