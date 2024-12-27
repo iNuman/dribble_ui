@@ -1,3 +1,4 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:dribble_ui/home_page.dart';
 import 'package:dribble_ui/pages/user_profile.dart';
 import 'package:flutter/material.dart';
@@ -17,24 +18,26 @@ class _BottomNavAppState extends State<BottomNavApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue.shade800,
-      body: Navigator(
-        initialRoute: "Home",
-        key: _navigatorKey,
-        onGenerateRoute: _generateRoute,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.grey.shade200,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Smart Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-        currentIndex: _currentTabIndex,
-        onTap: _onTap,
-      ),
-    );
+    return ThemeSwitchingArea(
+        child: Builder(
+            builder: (context) => Scaffold(
+                  backgroundColor: Colors.blue.shade800,
+                  body: Navigator(
+                    initialRoute: "Home",
+                    key: _navigatorKey,
+                    onGenerateRoute: _generateRoute,
+                  ),
+                  bottomNavigationBar: BottomNavigationBar(
+                    // backgroundColor: Colors.grey.shade200,
+                    items: const [
+                      BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                      BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Smart Home'),
+                      BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+                    ],
+                    currentIndex: _currentTabIndex,
+                    onTap: _onTap,
+                  ),
+                )));
   }
 
   // Handle navigation and tab index updates
@@ -64,9 +67,7 @@ class _BottomNavAppState extends State<BottomNavApp> {
   Route<dynamic> _generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case "SmartHome":
-        return MaterialPageRoute(
-          builder: (context) => const SmartHome()
-        );
+        return MaterialPageRoute(builder: (context) => const SmartHome());
       case "Profile":
         return MaterialPageRoute(
           builder: (context) => const UserProfile(),
