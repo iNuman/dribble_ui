@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:dribble_ui/constants/constant.dart';
+import 'package:dribble_ui/widgets/profile_widget.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -48,7 +49,11 @@ Widget getBackgroundWidget(Widget widget) {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              getSvgImage("logo_img.svg", imgSize),
+              ProfileWidget(
+                imagePath: "https://images.unsplash.com/photo-1734329403517-d463a131f7b0?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                onClicked: () async {},
+              ),
+              // getSvgImage("logo_img.svg", imgSize),
               // Image.asset(
               //   Constant.assetImagePath + "logo_img.png",
               //   height: imgSize,
@@ -60,6 +65,7 @@ Widget getBackgroundWidget(Widget widget) {
             ],
           ),
         ),
+
         SizedBox(
           width: double.infinity,
           height: double.infinity,
