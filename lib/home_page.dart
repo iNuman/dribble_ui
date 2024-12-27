@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     const Text("Hi Good Morning, ",
                                         style:
-                                            TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+                                            TextStyle(color: Colors.blue, fontSize: 24, fontWeight: FontWeight.bold)),
                                     const SizedBox(height: 6),
                                     Text("24, December 2024 ", style: TextStyle(color: Colors.blue.shade200)),
                                   ],
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("How do you feel? ",
-                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                                    style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold)),
                                 Icon(
                                   Icons.more_horiz,
                                   color: Colors.white,
@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                                       decoration: BoxDecoration(
-                                        color: Colors.grey.shade200,
+                                        color: Colors.lightBlue,
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(24),
                                           topRight: Radius.circular(24),
