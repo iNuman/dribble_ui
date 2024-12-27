@@ -4,6 +4,7 @@ import 'package:dribble_ui/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../models/user.dart';
+import '../utils/custom_dialog.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/budget_widget.dart';
 import '../widgets/numbers_widget.dart';
@@ -74,7 +75,13 @@ class _UserProfileState extends State<UserProfile> {
 
   Widget buildUpgradeButton() => ButtonWidget(
         text: 'Upgrade To PRO',
-        onClicked: () {},
+        onClicked: () {
+          DialogUtils.showCustomDialog(context,
+              title: "Upgrade?",
+              okBtnText: "Save",
+              cancelBtnText: "Cancel",
+              okBtnFunction: () =>{});
+        },
       );
 
   Widget buildAbout(User user) => Container(
