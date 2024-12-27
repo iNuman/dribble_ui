@@ -18,26 +18,41 @@ class _BottomNavAppState extends State<BottomNavApp> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
+    return WillPopScope(
+      onWillPop: () async {
+        if (_currentTabIndex != 0) {
+          // Move to Home tab if not already on it
+          setState(() {
+            _currentTabIndex = 0;
+          });
+          _navigatorKey.currentState?.pushReplacementNamed("Home");
+          return false; // Prevent default back behavior
+        }
+        // Exit the app if already on Home tab
+        return true;
+      },
+      child: ThemeSwitchingArea(
         child: Builder(
-            builder: (context) => Scaffold(
-                  backgroundColor: Colors.blue.shade800,
-                  body: Navigator(
-                    initialRoute: "Home",
-                    key: _navigatorKey,
-                    onGenerateRoute: _generateRoute,
-                  ),
-                  bottomNavigationBar: BottomNavigationBar(
-                    // backgroundColor: Colors.grey.shade200,
-                    items: const [
-                      BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-                      BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Smart Home'),
-                      BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-                    ],
-                    currentIndex: _currentTabIndex,
-                    onTap: _onTap,
-                  ),
-                )));
+          builder: (context) => Scaffold(
+            backgroundColor: Colors.blue.shade800,
+            body: Navigator(
+              initialRoute: "Home",
+              key: _navigatorKey,
+              onGenerateRoute: _generateRoute,
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              items: const [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Smart Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+              ],
+              currentIndex: _currentTabIndex,
+              onTap: _onTap,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   // Handle navigation and tab index updates
