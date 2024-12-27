@@ -4,8 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../themes/themes.dart';
+
 AppBar buildAppBar(BuildContext context) {
-  const user = MockData.userData;
+  var user = MockData.userData;
   final isDarkMode = user.isDarkMode;
   final icon = isDarkMode ? CupertinoIcons.sun_max : CupertinoIcons.moon_stars;
 
@@ -24,7 +25,7 @@ AppBar buildAppBar(BuildContext context) {
             switcher.changeTheme(theme: theme);
 
             final newUser = user.copy(isDarkMode: !isDarkMode);
-            // UserPreferences.setUser(newUser);
+            MockData.setUser(newUser);
           },
         ),
       ),
