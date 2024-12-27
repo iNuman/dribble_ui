@@ -1,5 +1,4 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:dribble_ui/bottom_nav.dart';
 import 'package:dribble_ui/constants/color_data.dart';
 import 'package:dribble_ui/data/data_file.dart';
 import 'package:dribble_ui/constants/size_config.dart';
