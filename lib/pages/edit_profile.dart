@@ -1,9 +1,7 @@
-import 'dart:io';
 
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:dribble_ui/data/mock_data.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 
 import '../models/user.dart';
 import '../widgets/app_bar_widget.dart';
@@ -12,6 +10,8 @@ import '../widgets/profile_widget.dart';
 import '../widgets/text_field_widget.dart';
 
 class EditProfilePage extends StatefulWidget {
+  const EditProfilePage({super.key});
+
   @override
   _EditProfilePageState createState() => _EditProfilePageState();
 }
