@@ -1,5 +1,3 @@
-
-
 import 'package:dribble_ui/constants/color_data.dart';
 import 'package:dribble_ui/models/address_model.dart';
 import 'package:dribble_ui/models/model_banner.dart';
@@ -16,12 +14,9 @@ class DataFile {
   static List<ModelBanner> getAllBanner() {
     List<ModelBanner> introList = [];
 
-    introList
-        .add(ModelBanner(1, "Best Fashion\nCollection", "20%", "banner.png"));
-    introList
-        .add(ModelBanner(2, "Best Fashion\nCollection", "20%", "banner.png"));
-    introList
-        .add(ModelBanner(2, "Best Fashion\nCollection", "20%", "banner.png"));
+    introList.add(ModelBanner(1, "Best Fashion\nCollection", "20%", "banner.png"));
+    introList.add(ModelBanner(2, "Best Fashion\nCollection", "20%", "banner.png"));
+    introList.add(ModelBanner(2, "Best Fashion\nCollection", "20%", "banner.png"));
 
     return introList;
   }
@@ -142,8 +137,7 @@ class DataFile {
     mainModel.id = 2;
     mainModel.name = "Rich P. Jeffery";
     mainModel.phoneNumber = "+1(368)68 000 068";
-    mainModel.location =
-        "4310 Clover Drive Colorado Springs,Clover Drive Colorado Springs, CO 80903";
+    mainModel.location = "4310 Clover Drive Colorado Springs,Clover Drive Colorado Springs, CO 80903";
     mainModel.type = "Company";
     subCatList.add(mainModel);
 
@@ -179,10 +173,8 @@ class DataFile {
   static List<ModelTrending> getAllTrendingProduct() {
     List<ModelTrending> introList = [];
 
-    introList
-        .add(ModelTrending(1, "Kid's Girl Shrug", "trend_1.png", "\$12.00"));
-    introList
-        .add(ModelTrending(2, "Women's Crop Dress", "trend_2.png", "\$16.00"));
+    introList.add(ModelTrending(1, "Kid's Girl Shrug", "trend_1.png", "\$12.00"));
+    introList.add(ModelTrending(2, "Women's Crop Dress", "trend_2.png", "\$16.00"));
 
     return introList;
   }
@@ -207,12 +199,9 @@ class DataFile {
   static List<ModelCart> getAllCartList() {
     List<ModelCart> cartList = [];
 
-    cartList.add(ModelCart(
-        1, "Kid's Girl Shrug", "Stylish Girl", "order1.png", "\$18.00", "1"));
-    cartList.add(ModelCart(
-        2, "Women's Crop Skirt", "Trendy", "order2.png", "\$20.00", "2"));
-    cartList.add(ModelCart(
-        3, "Kid's Boy Cloths", "Stylish Kids", "order3.png", "\$14.00", "1"));
+    cartList.add(ModelCart(1, "Kid's Girl Shrug", "Stylish Girl", "order1.png", "\$18.00", "1"));
+    cartList.add(ModelCart(2, "Women's Crop Skirt", "Trendy", "order2.png", "\$20.00", "2"));
+    cartList.add(ModelCart(3, "Kid's Boy Cloths", "Stylish Kids", "order3.png", "\$14.00", "1"));
 
     return cartList;
   }
@@ -220,18 +209,12 @@ class DataFile {
   static List<ModelTrending> getAllPopularProduct() {
     List<ModelTrending> introList = [];
 
-    introList
-        .add(ModelTrending(1, "Women's Crop Skirt", "order2.png", "\$18.00"));
-    introList.add(ModelTrending(2, "Men's Shirt", "order4.png", "\$16.00",
-        sale: "\$20.00"));
-    introList.add(ModelTrending(3, "Kid's Girl Shrug", "order1.png", "\$12.00",
-        sale: "\$26.00"));
-    introList
-        .add(ModelTrending(4, "Kid's Boy Cloths", "order3.png", "\$14.00"));
-    introList.add(
-        ModelTrending(5, "Women's Casual Outfit", "order2.png", "\$24.00"));
-    introList
-        .add(ModelTrending(6, "Kid's Boy T-shirt", "order4.png", "\$29.00"));
+    introList.add(ModelTrending(1, "Women's Crop Skirt", "order2.png", "\$18.00"));
+    introList.add(ModelTrending(2, "Men's Shirt", "order4.png", "\$16.00", sale: "\$20.00"));
+    introList.add(ModelTrending(3, "Kid's Girl Shrug", "order1.png", "\$12.00", sale: "\$26.00"));
+    introList.add(ModelTrending(4, "Kid's Boy Cloths", "order3.png", "\$14.00"));
+    introList.add(ModelTrending(5, "Women's Casual Outfit", "order2.png", "\$24.00"));
+    introList.add(ModelTrending(6, "Kid's Boy T-shirt", "order4.png", "\$29.00"));
 
     return introList;
   }
@@ -239,28 +222,32 @@ class DataFile {
   static List<ModelIntro> getAllIntroData() {
     List<ModelIntro> introList = [];
     introList.add(ModelIntro(
-        1,
-        "Shop Best Collection\n For Your Style",
-        "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
-        "cat_1.png"));
+      1,
+      "Shop Best Collection\n For Your Style",
+      "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
+      "https://images.unsplash.com/photo-1734378377292-212b58560ff8?q=80&w=2599&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ));
 
     introList.add(ModelIntro(
-        2,
-        "Trending Items For\n Men's Style",
-        "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
-        "cat_2.png"));
+      2,
+      "Trending Items For\n Men's Style",
+      "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
+      "https://images.unsplash.com/photo-1734192279506-45e56af5575f?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ));
 
     introList.add(ModelIntro(
-        3,
-        "Shop Our Stylish\n Fashion Items",
-        "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
-        "cat_3.png"));
+      3,
+      "Shop Our Stylish\n Fashion Items",
+      "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
+      "https://images.unsplash.com/photo-1733970730195-9ac7cb726eee?q=80&w=3396&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ));
 
     introList.add(ModelIntro(
-        4,
-        "Welcome to Shopping",
-        "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
-        "cat_4.png"));
+      4,
+      "Welcome to Shopping",
+      "Make your lifestyle stylish and feel happier with our\n latest fashion products.",
+      "https://images.unsplash.com/photo-1731432248469-8e16b091c7d2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ));
 
     return introList;
   }
