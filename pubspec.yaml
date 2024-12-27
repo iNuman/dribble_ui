@@ -72,6 +72,7 @@ flutter:
   assets:
     - lib/icons/
     - assets/images/
+    - assets/countries.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

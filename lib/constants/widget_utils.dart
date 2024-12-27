@@ -8,7 +8,7 @@ import 'size_config.dart';
 import 'color_data.dart';
 
 double getEditHeight() {
-  return Constant.getHeightPercentSize(8);
+  return Constant.getHeightPercentSize(6);
 }
 
 double getTopViewHeight() {
@@ -42,10 +42,8 @@ Widget getBackgroundWidget(Widget widget) {
               color: primaryColor,
               shape: SmoothRectangleBorder(
                   borderRadius: SmoothBorderRadius.only(
-                      bottomLeft: SmoothRadius(
-                          cornerRadius: size, cornerSmoothing: 0.2),
-                      bottomRight: SmoothRadius(
-                          cornerRadius: size, cornerSmoothing: 0.2)))),
+                      bottomLeft: SmoothRadius(cornerRadius: size, cornerSmoothing: 0.2),
+                      bottomRight: SmoothRadius(cornerRadius: size, cornerSmoothing: 0.2)))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,8 +55,8 @@ Widget getBackgroundWidget(Widget widget) {
               //   width: imgSize,
               // ),
               getHorSpace(Constant.getPercentSize(screenWidth, 3)),
-              getCustomText("Shopping", Colors.white, 1, TextAlign.start,
-                  FontWeight.bold, Constant.getPercentSize(imgSize, 65))
+              getCustomText(
+                  "Shopping", Colors.white, 1, TextAlign.start, FontWeight.bold, Constant.getPercentSize(imgSize, 65))
             ],
           ),
         ),
@@ -75,21 +73,15 @@ Widget getBackgroundWidget(Widget widget) {
                     width: double.infinity,
                     decoration: ShapeDecoration(
                         color: Colors.white,
-                        shadows: [
-                          BoxShadow(
-                              blurRadius: 3, color: Colors.black.withAlpha(20))
-                        ],
+                        shadows: [BoxShadow(blurRadius: 3, color: Colors.black.withAlpha(20))],
                         shape: SmoothRectangleBorder(
                             borderRadius: SmoothBorderRadius.all(SmoothRadius(
-                                cornerSmoothing: 0.5,
-                                cornerRadius: Constant.getPercentSize(
-                                    getRemainSize, 4))))),
+                                cornerSmoothing: 0.5, cornerRadius: Constant.getPercentSize(getRemainSize, 4))))),
                     margin: EdgeInsets.only(
                         // top: topHeight,
                         left: size / 2.2,
                         right: size / 2.2,
-                        bottom:
-                            Constant.getPercentSize(getTopViewHeight(), 10)),
+                        bottom: Constant.getPercentSize(getTopViewHeight(), 10)),
                     child: widget,
                   ),
                 ),
@@ -97,14 +89,13 @@ Widget getBackgroundWidget(Widget widget) {
             ],
           ),
         )
-
       ],
     ),
   );
 }
 
-Widget getCustomText(String text, Color color, int maxLine, TextAlign textAlign,
-    FontWeight fontWeight, double textSizes) {
+Widget getCustomText(
+    String text, Color color, int maxLine, TextAlign textAlign, FontWeight fontWeight, double textSizes) {
   return Text(
     text,
     overflow: TextOverflow.ellipsis,
@@ -133,13 +124,10 @@ Widget getLeadingIcon(BuildContext context, Function function) {
         // height: Constant.getPercentSize(toolbarHeight, 30),
         fit: BoxFit.cover,
         width: toolbarHeight,
-      )
-
-      );
+      ));
 }
 
-Widget getEmptyWidget(String image, String title, String description,
-    String btnTxt, Function function,
+Widget getEmptyWidget(String image, String title, String description, String btnTxt, Function function,
     {bool withButton = true}) {
   double screenHeight = SizeConfig.safeBlockVertical! * 100;
   double width = Constant.getWidthPercentSize(45);
@@ -154,8 +142,8 @@ Widget getEmptyWidget(String image, String title, String description,
         SizedBox(
           height: Constant.getPercentSize(screenHeight, 3.2),
         ),
-        getCustomTextWithoutMaxLine(title, fontBlack, TextAlign.center,
-            FontWeight.bold, Constant.getPercentSize(screenHeight, 3.4)),
+        getCustomTextWithoutMaxLine(
+            title, fontBlack, TextAlign.center, FontWeight.bold, Constant.getPercentSize(screenHeight, 3.4)),
         getSpace(Constant.getPercentSize(screenHeight, 1.2)),
         getCustomTextWithoutMaxLine(
           description,
@@ -169,16 +157,13 @@ Widget getEmptyWidget(String image, String title, String description,
             ? InkWell(
                 onTap: () {
                   function();
-
                 },
                 child: Container(
-                    margin: EdgeInsets.only(
-                        top: Constant.getPercentSize(height, 4)),
+                    margin: EdgeInsets.only(top: Constant.getPercentSize(height, 4)),
                     width: width,
                     height: height,
                     decoration: ShapeDecoration(
                       color: Colors.white,
-
                       shape: SmoothRectangleBorder(
                         side: BorderSide(color: primaryColor, width: 1.5),
                         borderRadius: SmoothBorderRadius(
@@ -189,11 +174,7 @@ Widget getEmptyWidget(String image, String title, String description,
                     ),
                     child: Center(
                       child: getCustomTextWithoutMaxLine(
-                          btnTxt,
-                          primaryColor,
-                          TextAlign.center,
-                          FontWeight.w700,
-                          Constant.getPercentSize(width,9)),
+                          btnTxt, primaryColor, TextAlign.center, FontWeight.w700, Constant.getPercentSize(width, 9)),
                     )),
               )
             : getSpace(0)
@@ -202,8 +183,7 @@ Widget getEmptyWidget(String image, String title, String description,
   );
 }
 
-Widget getDefaultTextFiledWithoutIconWidget(
-    BuildContext context, String s, TextEditingController textEditingController,
+Widget getDefaultTextFiledWithoutIconWidget(BuildContext context, String s, TextEditingController textEditingController,
     {bool withPrefix = false, String imgName = ""}) {
   double height = getEditHeight();
 
@@ -215,17 +195,13 @@ Widget getDefaultTextFiledWithoutIconWidget(
     builder: (context, setState) {
       return Container(
         height: height,
-        margin:
-            EdgeInsets.symmetric(vertical: Constant.getHeightPercentSize(1.2)),
-        padding:
-            EdgeInsets.symmetric(horizontal: Constant.getWidthPercentSize(2.5)),
+        margin: EdgeInsets.symmetric(vertical: Constant.getHeightPercentSize(1.2)),
+        padding: EdgeInsets.symmetric(horizontal: Constant.getWidthPercentSize(2.5)),
         alignment: Alignment.centerLeft,
         decoration: ShapeDecoration(
           color: Colors.transparent,
           shape: SmoothRectangleBorder(
-            side: BorderSide(
-                color: isAutoFocus ? primaryColor : Colors.grey.shade400,
-                width: 1),
+            side: BorderSide(color: isAutoFocus ? primaryColor : Colors.grey.shade400, width: 1),
             borderRadius: SmoothBorderRadius(
               cornerRadius: radius,
               cornerSmoothing: 0.8,
@@ -254,17 +230,12 @@ Widget getDefaultTextFiledWithoutIconWidget(
             textAlign: TextAlign.start,
             textAlignVertical: TextAlignVertical.center,
             style: TextStyle(
-                fontFamily: Constant.fontsFamily,
-                color: fontBlack,
-                fontWeight: FontWeight.w400,
-                fontSize: fontSize),
+                fontFamily: Constant.fontsFamily, color: fontBlack, fontWeight: FontWeight.w400, fontSize: fontSize),
             decoration: InputDecoration(
                 prefixIcon: (withPrefix)
                     ? Padding(
-                        padding: EdgeInsets.only(
-                            right: Constant.getWidthPercentSize(2.5)),
-                        child: getSvgImage(
-                            imgName, Constant.getPercentSize(height, 40)),
+                        padding: EdgeInsets.only(right: Constant.getWidthPercentSize(2.5)),
+                        child: getSvgImage(imgName, Constant.getPercentSize(height, 40)),
                       )
                     : const SizedBox(
                         width: 0,
@@ -277,8 +248,7 @@ Widget getDefaultTextFiledWithoutIconWidget(
                 errorBorder: InputBorder.none,
                 disabledBorder: InputBorder.none,
                 hintText: s,
-                prefixIconConstraints:
-                    const BoxConstraints(minHeight: 0, minWidth: 0),
+                prefixIconConstraints: const BoxConstraints(minHeight: 0, minWidth: 0),
                 hintStyle: TextStyle(
                     fontFamily: Constant.fontsFamily,
                     color: greyFont,
@@ -317,8 +287,8 @@ Widget getSettingRow(String image, String title, Function function) {
         getHorSpace(Constant.getPercentSize(getAppBarPadding(), 75)),
         Expanded(
           flex: 1,
-          child: getCustomText(title, fontBlack, 1, TextAlign.start,
-              FontWeight.w600, Constant.getPercentSize(iconSize, 45)),
+          child: getCustomText(
+              title, fontBlack, 1, TextAlign.start, FontWeight.w600, Constant.getPercentSize(iconSize, 45)),
         ),
         getSvgImage("ArrowRight.svg", subIconSize)
       ],
@@ -326,12 +296,8 @@ Widget getSettingRow(String image, String title, Function function) {
   );
 }
 
-Widget getDefaultHeader(BuildContext context, String title, Function function,
-    ValueChanged<String> funChange,
-    {bool withFilter = false,
-    Function? filterFun,
-    bool isShowBack = true,
-    bool isShowSearch = true}) {
+Widget getDefaultHeader(BuildContext context, String title, Function function, ValueChanged<String> funChange,
+    {bool withFilter = false, Function? filterFun, bool isShowBack = true, bool isShowSearch = true}) {
   double size = Constant.getHeightPercentSize(6);
   double appbarPadding = getAppBarPadding();
   double toolbarHeight = Constant.getToolbarHeight(context);
@@ -341,22 +307,18 @@ Widget getDefaultHeader(BuildContext context, String title, Function function,
       children: [
         Container(
           width: double.infinity,
-          padding: EdgeInsets.only(
-              top: Constant.getToolbarTopHeight(context),
-              left: appbarPadding,
-              right: appbarPadding),
+          padding:
+              EdgeInsets.only(top: Constant.getToolbarTopHeight(context), left: appbarPadding, right: appbarPadding),
           height: toolbarHeight,
           child: Stack(
             children: [
               Visibility(
                 visible: isShowBack,
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: getLeadingIcon(context, function)),
+                child: Align(alignment: Alignment.centerLeft, child: getLeadingIcon(context, function)),
               ),
               Center(
-                child: getCustomText(title, Colors.white, 1, TextAlign.center,
-                    FontWeight.bold, Constant.getPercentSize(size, 50)),
+                child: getCustomText(
+                    title, Colors.white, 1, TextAlign.center, FontWeight.bold, Constant.getPercentSize(size, 50)),
               )
               // Image.asset(Constant.assetImagePath + "back11.png",
               //     height: Constant.getPercentSize(toolbarHeight, 90),
@@ -376,14 +338,12 @@ Widget getDefaultHeader(BuildContext context, String title, Function function,
                     top: Constant.getPercentSize(appbarPadding, 30)),
                 width: double.infinity,
                 height: getEditHeight(),
-                padding: EdgeInsets.symmetric(
-                    horizontal: Constant.getWidthPercentSize(3)),
+                padding: EdgeInsets.symmetric(horizontal: Constant.getWidthPercentSize(3)),
                 decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: SmoothRectangleBorder(
-                        borderRadius: SmoothBorderRadius(
-                            cornerRadius: getCorners(),
-                            cornerSmoothing: getCornerSmoothing()))),
+                        borderRadius:
+                            SmoothBorderRadius(cornerRadius: getCorners(), cornerSmoothing: getCornerSmoothing()))),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -428,8 +388,8 @@ Widget getDefaultHeader(BuildContext context, String title, Function function,
   );
 }
 
-Widget getCustomTextWithStrike(String text, Color color, int maxLine,
-    TextAlign textAlign, FontWeight fontWeight, double textSizes) {
+Widget getCustomTextWithStrike(
+    String text, Color color, int maxLine, TextAlign textAlign, FontWeight fontWeight, double textSizes) {
   return Text(
     text,
     overflow: TextOverflow.ellipsis,
@@ -445,8 +405,8 @@ Widget getCustomTextWithStrike(String text, Color color, int maxLine,
   );
 }
 
-Widget getCustomTextWithoutMaxLine(String text, Color color,
-    TextAlign textAlign, FontWeight fontWeight, double textSizes,
+Widget getCustomTextWithoutMaxLine(
+    String text, Color color, TextAlign textAlign, FontWeight fontWeight, double textSizes,
     {txtHeight = 1.5}) {
   return Text(
     text,
@@ -468,10 +428,10 @@ Widget getFavWidget(double height, bool isFav, EdgeInsetsGeometry margin) {
     width: size,
     margin: margin,
     height: size,
-    decoration:
-        const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+    decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
     child: Center(
-      child: getSvgImage((isFav)?"fav_fill.svg":"heart.svg", Constant.getPercentSize(size, 70),color: (isFav)?null:Colors.black54),
+      child: getSvgImage((isFav) ? "fav_fill.svg" : "heart.svg", Constant.getPercentSize(size, 70),
+          color: (isFav) ? null : Colors.black54),
     ),
   );
 }
@@ -503,19 +463,17 @@ Widget getHorSpace(double verSpace) {
   );
 }
 
-ShapeDecoration getTextFieldDecoration({Color colorSet=Colors.grey}) {
+ShapeDecoration getTextFieldDecoration({Color colorSet = Colors.grey}) {
   return ShapeDecoration(
       shape: SmoothRectangleBorder(
           // side: BorderSide(
           //     color: Colors.grey, width: 1),
-          borderRadius: SmoothBorderRadius.all(SmoothRadius(
-              cornerSmoothing: 0.5,
-              cornerRadius: Constant.getPercentSize(getEditHeight(), 20))),
+          borderRadius: SmoothBorderRadius.all(
+              SmoothRadius(cornerSmoothing: 0.5, cornerRadius: Constant.getPercentSize(getEditHeight(), 20))),
           side: BorderSide(width: 1, color: colorSet)));
 }
 
-Widget getLoginTextField(
-    TextEditingController controller, String hint, String icon) {
+Widget getLoginTextField(TextEditingController controller, String hint, String icon) {
   double screenWidth = SizeConfig.safeBlockHorizontal! * 100;
   double screenHeight = SizeConfig.safeBlockVertical! * 100;
 
@@ -524,70 +482,59 @@ Widget getLoginTextField(
   bool isAutoFocus = false;
   return StatefulBuilder(
     builder: (context, setState) {
-
-    return Container(
-      width: double.infinity,
-      height: getEditHeight(),
-      margin: EdgeInsets.symmetric(
-          vertical: Constant.getPercentSize(screenHeight, 1.5)),
-      padding: EdgeInsets.symmetric(
-          horizontal: Constant.getPercentSize(screenWidth, 2)),
-      decoration: getTextFieldDecoration(colorSet:isAutoFocus ? primaryColor : Colors.grey,),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          getSvgImage(icon, edtIconSize),
-          // Image.asset(
-          //   Constant.assetImagePath + icon,
-          //   height: edtIconSize,
-          //   width: edtIconSize,
-          // ),
-          getHorSpace(Constant.getPercentSize(screenWidth, 1.5)),
-          Expanded(
-            flex: 1,
-            child: Focus(
-              onFocusChange: (hasFocus) {
-                if (hasFocus) {
-                  setState(() {
-                    isAutoFocus = true;
-                    myFocusNode.canRequestFocus = true;
-                  });
-                } else {
-                  setState(() {
-                    isAutoFocus = false;
-                    myFocusNode.canRequestFocus = false;
-                  });
-                }
-              },
-              child: TextField(
-                controller: controller,
-                autofocus: false,
-                focusNode: myFocusNode,
-                style: TextStyle(
-                    fontSize: getEdtTextSize(),
-                    color: fontBlack,
-
-                    fontWeight: FontWeight.w400),
-                decoration: InputDecoration(
-                    isDense: true,
-                    contentPadding: EdgeInsets.zero,
-                    hintText: hint,
-                    border: InputBorder.none),
+      return Container(
+        width: double.infinity,
+        height: getEditHeight(),
+        margin: EdgeInsets.symmetric(vertical: Constant.getPercentSize(screenHeight, 1.5)),
+        padding: EdgeInsets.symmetric(horizontal: Constant.getPercentSize(screenWidth, 2)),
+        decoration: getTextFieldDecoration(
+          colorSet: isAutoFocus ? primaryColor : Colors.grey,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            getSvgImage(icon, edtIconSize),
+            // Image.asset(
+            //   Constant.assetImagePath + icon,
+            //   height: edtIconSize,
+            //   width: edtIconSize,
+            // ),
+            getHorSpace(Constant.getPercentSize(screenWidth, 1.5)),
+            Expanded(
+              flex: 1,
+              child: Focus(
+                onFocusChange: (hasFocus) {
+                  if (hasFocus) {
+                    setState(() {
+                      isAutoFocus = true;
+                      myFocusNode.canRequestFocus = true;
+                    });
+                  } else {
+                    setState(() {
+                      isAutoFocus = false;
+                      myFocusNode.canRequestFocus = false;
+                    });
+                  }
+                },
+                child: TextField(
+                  controller: controller,
+                  autofocus: false,
+                  focusNode: myFocusNode,
+                  style: TextStyle(fontSize: getEdtTextSize(), color: fontBlack, fontWeight: FontWeight.w400),
+                  decoration: InputDecoration(
+                      isDense: true, contentPadding: EdgeInsets.zero, hintText: hint, border: InputBorder.none),
+                ),
               ),
-            ),
-          )
-        ],
-      ),
-    );
+            )
+          ],
+        ),
+      );
     },
-
   );
 }
 
-
-Widget getPassTextField(TextEditingController controller, String hint,
-    String icon, bool showPass, Function function) {
+Widget getPassTextField(TextEditingController controller, String hint, String icon, bool showPass, Function function) {
   double screenWidth = SizeConfig.safeBlockHorizontal! * 100;
   double screenHeight = SizeConfig.safeBlockVertical! * 100;
   double edtIconSize = getEdtIconSize();
@@ -595,65 +542,61 @@ Widget getPassTextField(TextEditingController controller, String hint,
   FocusNode myFocusNode = FocusNode();
   bool isAutoFocus = false;
 
-  return StatefulBuilder(builder: (context, setState) {
-    return Container(
-      width: double.infinity,
-      height: getEditHeight(),
-      margin: EdgeInsets.symmetric(
-          vertical: Constant.getPercentSize(screenHeight, 1.5)),
-      padding: EdgeInsets.symmetric(
-          horizontal: Constant.getPercentSize(screenWidth, 2)),
-      decoration: getTextFieldDecoration(colorSet:isAutoFocus ? primaryColor : Colors.grey,),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          getSvgImage(icon, edtIconSize),
-          getHorSpace(Constant.getPercentSize(screenWidth, 1.5)),
-          Expanded(
-            flex: 1,
-            child: Focus(
-              onFocusChange: (hasFocus) {
-                if (hasFocus) {
-                  setState(() {
-                    isAutoFocus = true;
-                    myFocusNode.canRequestFocus = true;
-                  });
-                } else {
-                  setState(() {
-                    isAutoFocus = false;
-                    myFocusNode.canRequestFocus = false;
-                  });
-                }
-              },
-              child: TextField(
-                obscureText: (showPass) ? false : true,
-                controller: controller,
-                autofocus: false,
-                focusNode: myFocusNode,
-                style: TextStyle(
-                    fontSize: getEdtTextSize(),
-                    color: fontBlack,
-                    fontWeight: FontWeight.w400),
-                decoration: InputDecoration(
-                    isDense: true,
-                    contentPadding: EdgeInsets.zero,
-                    hintText: hint,
-                    border: InputBorder.none),
+  return StatefulBuilder(
+    builder: (context, setState) {
+      return Container(
+        width: double.infinity,
+        height: getEditHeight(),
+        margin: EdgeInsets.symmetric(vertical: Constant.getPercentSize(screenHeight, 1.5)),
+        padding: EdgeInsets.symmetric(horizontal: Constant.getPercentSize(screenWidth, 2)),
+        decoration: getTextFieldDecoration(
+          colorSet: isAutoFocus ? primaryColor : Colors.grey,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            getSvgImage(icon, edtIconSize),
+            getHorSpace(Constant.getPercentSize(screenWidth, 1.5)),
+            Expanded(
+              flex: 1,
+              child: Focus(
+                onFocusChange: (hasFocus) {
+                  if (hasFocus) {
+                    setState(() {
+                      isAutoFocus = true;
+                      myFocusNode.canRequestFocus = true;
+                    });
+                  } else {
+                    setState(() {
+                      isAutoFocus = false;
+                      myFocusNode.canRequestFocus = false;
+                    });
+                  }
+                },
+                child: TextField(
+                  obscureText: (showPass) ? false : true,
+                  controller: controller,
+                  autofocus: false,
+                  focusNode: myFocusNode,
+                  style: TextStyle(fontSize: getEdtTextSize(), color: fontBlack, fontWeight: FontWeight.w400),
+                  decoration: InputDecoration(
+                      isDense: true, contentPadding: EdgeInsets.zero, hintText: hint, border: InputBorder.none),
+                ),
               ),
             ),
-          ),
-          InkWell(
-              onTap: () {
-                function();
-              },
-              child: getSvgImage("eye.svg", edtIconSize, color: Colors.grey))
-          // SvgPicture.asset(Constant.assetImagePath + "",
-          //     color: Colors.red, semanticsLabel: 'A red up arrow')
-        ],
-      ),
-    );
-  },);
+            InkWell(
+                onTap: () {
+                  function();
+                },
+                child: getSvgImage("eye.svg", edtIconSize, color: Colors.grey))
+            // SvgPicture.asset(Constant.assetImagePath + "",
+            //     color: Colors.red, semanticsLabel: 'A red up arrow')
+          ],
+        ),
+      );
+    },
+  );
 }
 
 Widget getSvgImage(String image, double size, {Color? color}) {
@@ -674,33 +617,29 @@ double getCornerSmoothing() {
   return 0.5;
 }
 
-getButtonContainer(
-    Widget widget, EdgeInsetsGeometry insetsGeometry, Color color) {
+getButtonContainer(Widget widget, EdgeInsetsGeometry insetsGeometry, Color color) {
   return Container(
     margin: insetsGeometry,
     width: double.infinity,
     height: getEditHeight(),
     decoration: ShapeDecoration(
         color: color,
-        shape: SmoothRectangleBorder(
-            borderRadius: SmoothBorderRadius(
-                cornerRadius: getCorners(), cornerSmoothing: 0.5))),
+        shape:
+            SmoothRectangleBorder(borderRadius: SmoothBorderRadius(cornerRadius: getCorners(), cornerSmoothing: 0.5))),
     child: widget,
   );
 }
 
-getButtonShapeDecoration(Color color,
-    {bool withCustomCorner = false, double corner = 0}) {
+getButtonShapeDecoration(Color color, {bool withCustomCorner = false, double corner = 0}) {
   return ShapeDecoration(
       color: color,
       shape: SmoothRectangleBorder(
-          borderRadius: SmoothBorderRadius(
-              cornerRadius: (withCustomCorner) ? corner : getCorners(),
-              cornerSmoothing: 0.5)));
+          borderRadius:
+              SmoothBorderRadius(cornerRadius: (withCustomCorner) ? corner : getCorners(), cornerSmoothing: 0.5)));
 }
 
-Widget getButton(Color bgColor, bool withCorners, String text, Color textColor,
-    Function function, FontWeight weight, EdgeInsetsGeometry insetsGeometry,
+Widget getButton(Color bgColor, bool withCorners, String text, Color textColor, Function function, FontWeight weight,
+    EdgeInsetsGeometry insetsGeometry,
     {isBorder = false, borderColor = Colors.transparent}) {
   double buttonHeight = getEditHeight();
   double fontSize = Constant.getPercentSize(buttonHeight, 32);
@@ -715,15 +654,11 @@ Widget getButton(Color bgColor, bool withCorners, String text, Color textColor,
       decoration: ShapeDecoration(
           color: bgColor,
           shape: SmoothRectangleBorder(
-              side: BorderSide(
-                  width: 1,
-                  color: (isBorder) ? borderColor : Colors.transparent),
+              side: BorderSide(width: 1, color: (isBorder) ? borderColor : Colors.transparent),
               borderRadius: SmoothBorderRadius(
-                  cornerRadius: (withCorners) ? getCorners() : 0,
-                  cornerSmoothing: (withCorners) ? 0.5 : 0))),
+                  cornerRadius: (withCorners) ? getCorners() : 0, cornerSmoothing: (withCorners) ? 0.5 : 0))),
       child: Center(
-        child: getCustomText(
-            text, textColor, 1, TextAlign.center, weight, fontSize),
+        child: getCustomText(text, textColor, 1, TextAlign.center, weight, fontSize),
       ),
     ),
   );
