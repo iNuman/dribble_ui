@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                                   child: Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                                       decoration: BoxDecoration(
-                                        color: Colors.lightBlue,
+                                        color: Colors.white,
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(24),
                                           topRight: Radius.circular(24),
@@ -208,7 +208,7 @@ class _HomePageState extends State<HomePage> {
                                           children: [
                                             Container(
                                               decoration: BoxDecoration(
-                                                color: Theme.of(context).hintColor,
+                                                color: Colors.black54,
                                                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                                               ),
                                               height: 4,
