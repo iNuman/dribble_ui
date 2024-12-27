@@ -15,7 +15,7 @@ class ExerciseRowWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12.0),
       child: Container(
           padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
+          decoration: BoxDecoration(color: Colors.blue.shade800, borderRadius: BorderRadius.circular(16)),
           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Row(
               children: [
