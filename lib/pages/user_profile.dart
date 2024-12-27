@@ -9,21 +9,27 @@ import '../widgets/budget_widget.dart';
 import '../widgets/numbers_widget.dart';
 import 'edit_profile.dart';
 
-class UserProfile extends StatelessWidget {
-  final user = MockData.userData;
+class UserProfile extends StatefulWidget {
 
   const UserProfile({super.key});
 
   @override
+  State<UserProfile> createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
+  final user = MockData.userData;
+
+  @override
   Widget build(BuildContext context) {
 
-    return Container(
+    return ThemeSwitchingArea(
       child: Builder(
         builder: (context) => Scaffold(
-          backgroundColor: Colors.grey.shade200,
+          // backgroundColor: Colors.grey.shade200,
           appBar: buildAppBar(context),
           body: ListView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: [
                ProfileWidget(
                 imagePath: user.imagePath,
@@ -31,7 +37,7 @@ class UserProfile extends StatelessWidget {
                   await Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => EditProfilePage()),
                   );
-                  // setState(() {});
+                  setState(() {});
                 },
               ),
               const SizedBox(height: 24),
@@ -51,7 +57,6 @@ class UserProfile extends StatelessWidget {
       ),
     );
   }
-
 
   Widget buildName(User user) => Column(
         children: [
