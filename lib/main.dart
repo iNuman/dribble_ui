@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         builder: (context) => MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-              primaryColor: Colors.blue.shade800,
+              // primaryColor: Colors.blue.shade800,
               useMaterial3: true,
             ),
             home: const SafeArea(
