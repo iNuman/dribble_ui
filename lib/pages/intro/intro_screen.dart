@@ -63,7 +63,7 @@ class _IntroScreen extends State<IntroScreen> {
                                   child: CircularProgressIndicator(
                                     value: loadingProgress.expectedTotalBytes != null
                                         ? loadingProgress.cumulativeBytesLoaded /
-                                        (loadingProgress.expectedTotalBytes ?? 1)
+                                            (loadingProgress.expectedTotalBytes ?? 1)
                                         : null,
                                   ),
                                 );
