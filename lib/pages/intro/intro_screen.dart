@@ -53,9 +53,28 @@ class _IntroScreen extends State<IntroScreen> {
                         return SizedBox(
                           height: double.infinity,
                           width: double.infinity,
-                          child: Image.asset(
-                            Constant.assetImagePath + introList[selectedPos].image!,
-                            fit: BoxFit.contain,
+                          child: Image.network(
+                            introList[selectedPos].image!,
+                            fit: BoxFit.cover, // Adjust the image to fill the screen while maintaining its aspect ratio
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) {
+                                return child;
+                              } else {
+                                return Center(
+                                  child: CircularProgressIndicator(
+                                    value: loadingProgress.expectedTotalBytes != null
+                                        ? loadingProgress.cumulativeBytesLoaded /
+                                        (loadingProgress.expectedTotalBytes ?? 1)
+                                        : null,
+                                  ),
+                                );
+                              }
+                            },
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Center(
+                                child: Text('Failed to load image'),
+                              );
+                            },
                           ),
                         );
                       },
@@ -74,7 +93,7 @@ class _IntroScreen extends State<IntroScreen> {
                         getSpace(Constant.getPercentSize(screenHeight, 1.8)),
                         getCustomTextWithoutMaxLine(
                             introList[selectedPos].description ?? "",
-                            Colors.black,
+                            Colors.white54,
                             TextAlign.center,
                             FontWeight.bold,
                             // TextAlign.center, FontWeight.w400,
@@ -101,9 +120,9 @@ class _IntroScreen extends State<IntroScreen> {
                               }, FontWeight.w600, EdgeInsets.symmetric(horizontal: horMargin, vertical: verMargin),
                                 isBorder: false),
                         (selectedPos == introList.length - 1)
-                            ? getButton(Colors.transparent, true, "Register", Colors.black45, () {
+                            ? getButton(Colors.transparent, true, "Register", Colors.white, () {
                                 Constant.sendToScreen(const LoginScreen(), context);
-                              }, FontWeight.w400, EdgeInsets.symmetric(horizontal: horMargin, vertical: verMargin),
+                              }, FontWeight.w500, EdgeInsets.symmetric(horizontal: horMargin, vertical: verMargin),
                                 isBorder: true, borderColor: Colors.blue)
                             : InkWell(
                                 onTap: () {
@@ -111,7 +130,7 @@ class _IntroScreen extends State<IntroScreen> {
                                 },
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(vertical: verMargin),
-                                  child: getCustomText("Skip", Colors.black45, 1, TextAlign.center, FontWeight.w300,
+                                  child: getCustomText("Skip", Colors.white, 1, TextAlign.center, FontWeight.w500,
                                       Constant.getPercentSize(getEditHeight(), 32)),
                                 ),
                               ),
