@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -33,21 +34,62 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget buildImage() {
-    final image = imagePath.contains('https://') ? NetworkImage(imagePath) : FileImage(File(imagePath));
+    final isNetworkImage = imagePath.contains('https://');
+    final image = isNetworkImage ? NetworkImage(imagePath) : FileImage(File(imagePath)) as ImageProvider;
 
     return ClipOval(
       child: Material(
         color: Colors.transparent,
-        child: Ink.image(
-          image: image as ImageProvider,
-          fit: BoxFit.cover,
-          width: 128,
-          height: 128,
-          child: InkWell(onTap: onClicked),
+        child: Stack(
+          children: [
+            // Display the image
+            Ink.image(
+              image: image,
+              fit: BoxFit.cover,
+              width: 128,
+              height: 128,
+              child: InkWell(onTap: onClicked),
+            ),
+            // Add loading indicator for network images
+            if (isNetworkImage)
+              Positioned.fill(
+                child: FutureBuilder(
+                  future: _preloadNetworkImage(imagePath),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else if (snapshot.hasError) {
+                      return const Center(
+                        child: Text('Failed to load image'),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
+              ),
+          ],
         ),
       ),
     );
   }
+
+  Future<void> _preloadNetworkImage(String url) async {
+    final completer = Completer<void>();
+    final image = NetworkImage(url);
+    final imageStream = image.resolve(const ImageConfiguration());
+
+    imageStream.addListener(
+      ImageStreamListener(
+            (info, _) => completer.complete(),
+        onError: (error, stackTrace) => completer.completeError(error),
+      ),
+    );
+
+    return completer.future;
+  }
+
 
   Widget buildEditIcon(Color color) => buildCircle(
         color: Colors.white,
