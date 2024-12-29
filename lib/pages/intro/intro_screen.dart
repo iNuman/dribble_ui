@@ -10,7 +10,7 @@ import '../../constants/constant.dart';
 
 class IntroScreen extends StatefulWidget {
 
-  const IntroScreen({super.key});
+  const IntroScreen({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
